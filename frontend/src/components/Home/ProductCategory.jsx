@@ -65,39 +65,35 @@ const ProductCategoryFull = () => {
   ];
 
   const features = [
-    { icon: "⭐", text: "Premium Quality", color: "text-yellow-600" },
-    { icon: "🔪", text: "Expertly Cut", color: "text-rose-600" },
-    { icon: "🚚", text: "Same Day Delivery", color: "text-blue-600" },
-    { icon: "🌿", text: "100% Natural", color: "text-green-600" }
+    { icon: "⭐", text: "Premium Quality", color: "text-[#006400]" },
+    { icon: "🔪", text: "Expertly Cut", color: "text-[#006400]" },
+    { icon: "🚚", text: "Same Day Delivery", color: "text-[#006400]" },
+    { icon: "🌿", text: "100% Natural", color: "text-[#006400]" }
   ];
 
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-amber-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#F5F5DC] via-white to-[#6B8E23]/20">
       {/* Header Section */}
-      <section className="pt-20  relative overflow-hidden">
+      <section className="pt-20 relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-full mx-auto">
-            <div className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-lg mb-6 border border-rose-100">
-              <div className="w-2 h-2 bg-rose-900 rounded-full animate-pulse"></div>
-              <span className="text-sm font-semibold text-rose-900 uppercase tracking-widest">Premium Collection</span>
+            <div className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-lg mb-6 border border-[#6B8E23]/20">
+              <div className="w-2 h-2 bg-[#006400] rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold text-[#006400] uppercase tracking-widest">Premium Collection</span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-[#452B1F] mb-6 leading-tight">
               Premium Mutton
-              <span className="block bg-gradient-to-r from-rose-900 to-amber-900 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#006400] to-[#964B00] bg-clip-text text-transparent">
                 Collection
               </span>
             </h1>
             
-            <div className="w-32 h-1 bg-gradient-to-r from-rose-900 to-amber-900 mx-auto mb-8 rounded-full"></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-[#6B8E23] to-[#964B00] mx-auto mb-8 rounded-full"></div>
             
-            <p className="text-xl md:text-2xl text-gray-600 mb-5 max-w-full mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-[#452B1F] mb-5 max-w-full mx-auto leading-relaxed">
               Discover our exquisite range of mutton cuts, expertly prepared by master butchers with over two decades of tradition and expertise
             </p>
-
-            {/* Stats Bar */}
-           
           </div>
         </div>
       </section>
@@ -108,7 +104,7 @@ const ProductCategoryFull = () => {
           {/* Features Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-lg border border-rose-100 hover:shadow-2xl hover:transform hover:-translate-y-2 transition-all duration-300">
+              <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-lg border border-[#D2B48C] hover:shadow-2xl hover:transform hover:-translate-y-2 transition-all duration-300">
                 <div className="text-3xl mb-3">{feature.icon}</div>
                 <div className={`font-semibold ${feature.color}`}>{feature.text}</div>
               </div>
@@ -121,7 +117,7 @@ const ProductCategoryFull = () => {
               <div 
                 key={category.id}
                 className={`bg-white rounded-3xl shadow-xl overflow-hidden border-2 transition-all duration-500 hover:shadow-2xl hover:transform hover:-translate-y-3 ${
-                  category.featured ? 'border-rose-300' : 'border-rose-100'
+                  category.featured ? 'border-[#006400]' : 'border-[#D2B48C]'
                 }`}
               >
                 {/* Image Section */}
@@ -137,14 +133,14 @@ const ProductCategoryFull = () => {
                   
                   {/* Featured Badge */}
                   {category.featured && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-rose-900 to-amber-900 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-[#006400] to-[#6B8E23] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
                       Most Popular
                     </div>
                   )}
                   
                   {/* Item Count */}
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-rose-900 font-bold text-sm">{category.items}</span>
+                    <span className="text-[#006400] font-bold text-sm">{category.items}</span>
                   </div>
                   
                   {/* Price Range */}
@@ -158,10 +154,10 @@ const ProductCategoryFull = () => {
                   <div className="flex items-center gap-4 mb-4">
                     <div className="text-3xl">{category.icon}</div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-black text-gray-900 mb-1">
+                      <h3 className="text-xl font-black text-[#452B1F] mb-1">
                         {category.name}
                       </h3>
-                      <p className="text-amber-900 font-medium text-sm">
+                      <p className="text-[#964B00] font-medium text-sm">
                         {category.description}
                       </p>
                     </div>
@@ -169,10 +165,10 @@ const ProductCategoryFull = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3">
-                    <button className="flex-1 bg-gradient-to-r from-rose-900 to-amber-900 text-white font-semibold py-3 px-4 rounded-xl hover:from-rose-800 hover:to-amber-800 transition-all duration-300 text-sm">
+                    <button className="flex-1 bg-gradient-to-r from-[#006400] to-[#6B8E23] text-white font-semibold py-3 px-4 rounded-xl hover:from-[#006400] hover:to-[#964B00] transition-all duration-300 text-sm">
                       View Cuts
                     </button>
-                    <button className="flex-1 bg-white text-gray-900 font-semibold py-3 px-4 border-2 border-gray-300 rounded-xl hover:border-rose-900 hover:text-rose-900 transition-all duration-300 text-sm">
+                    <button className="flex-1 bg-white text-[#452B1F] font-semibold py-3 px-4 border-2 border-[#D2B48C] rounded-xl hover:border-[#006400] hover:text-[#006400] transition-all duration-300 text-sm">
                       Quick Order
                     </button>
                   </div>
@@ -182,8 +178,6 @@ const ProductCategoryFull = () => {
           </div>
         </div>
       </section>
-
-     
     </div>
   );
 };

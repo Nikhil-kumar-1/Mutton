@@ -93,7 +93,7 @@ const Navbar = () => {
   const buttonVariants = {
     hover: {
       scale: 1.05,
-      boxShadow: "0 10px 25px rgba(37, 211, 102, 0.3)",
+      boxShadow: "0 10px 25px rgba(151, 128, 79, 0.3)",
       transition: {
         type: "spring",
         stiffness: 400,
@@ -113,23 +113,60 @@ const Navbar = () => {
         animate="visible"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled 
-            ? 'bg-white  shadow-lg border-b border-red-100' 
-            : 'bg-gradient-to-r from-red-800 to-red-900'
+            ? 'bg-[#F9F1E2] shadow-lg border-b border-[#97804F]/20' 
+            : 'bg-gradient-to-r from-[#97804F] to-[#392F1D]'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Logo */}
+            {/* Logo Section - Fixed with proper colors */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex-shrink-0 flex items-center"
             >
-              <Link to="/" className="flex items-center space-x-2">
-                <GiMeat className={`text-3xl ${scrolled ? 'text-red-700' : 'text-white'}`} />
-                <span className={`text-xl font-bold ${scrolled ? 'text-red-800' : 'text-white'}`}>
-                  Premium Mutton
-                </span>
+              <Link to="/" className="flex items-center space-x-3 no-underline">
+                {/* Logo Image */}
+                <img 
+                  src="/logo.png" 
+                  alt="Hamara Pattal Logo"
+                  className="w-20 h-20 object-contain flex-shrink-0"
+                />
+                
+                {/* Brand Text */}
+                <div className="flex flex-col leading-tight">
+                  {/* Brand Title */}
+                  <div className="flex items-baseline space-x-1">
+                    {/* Hamara */}
+                    <span
+                      className="font-[Crimson_Pro] font-semibold text-lg tracking-tight"
+                      style={{ 
+                        color: scrolled ? "#395E33" : "#F9F1E2" 
+                      }}
+                    >
+                      हमारा
+                    </span>
+                    {/* Pattal */}
+                    <span
+                      className="font-[JA_Jayagiri_Sans] font-bold text-xl tracking-tight"
+                      style={{ 
+                        color: scrolled ? "#395E33" : "#F9F1E2" 
+                      }}
+                    >
+                      Pattal
+                    </span>
+                  </div>
+                  
+                  {/* Tagline - Now visible with proper colors */}
+                  <span
+                    className="font-[Crimson_Pro] text-sm font-medium tracking-wide mt-0.5"
+                    style={{ 
+                      color: scrolled ? "#8A6A47" : "#D2B48C" 
+                    }}
+                  >
+                    Aap Hum और Noida
+                  </span>
+                </div>
               </Link>
             </motion.div>
 
@@ -148,11 +185,11 @@ const Navbar = () => {
                       className={`px-3 py-2 rounded-md text-md font-medium transition-all duration-200 flex items-center space-x-1 ${
                         location.pathname === item.path
                           ? scrolled
-                            ? 'bg-red-100 text-red-800'
-                            : 'bg-white/20 text-white'
+                            ? 'bg-[#97804F]/20 text-[#392F1D] border-b-2 border-[#97804F]'
+                            : 'bg-[#F9F1E2]/20 text-[#F9F1E2] border-b-2 border-[#F9F1E2]'
                           : scrolled
-                          ? 'text-gray-700 hover:text-red-700 hover:bg-red-50'
-                          : 'text-red-100 hover:text-white hover:bg-white/10'
+                          ? 'text-[#392F1D] hover:text-[#97804F] hover:bg-[#F9F1E2]'
+                          : 'text-[#F9F1E2] hover:text-[#FFFFFF] hover:bg-[#97804F]/30'
                       }`}
                     >
                       {item.icon}
@@ -170,9 +207,9 @@ const Navbar = () => {
                 whileHover="hover"
                 whileTap="tap"
                 onClick={handleWhatsAppBooking}
-                className="bg-green-600 cursor-pointer hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium flex items-center space-x-2 transition-colors duration-200 shadow-lg"
+                className="bg-[#97804F] cursor-pointer hover:bg-[#392F1D] text-[#F9F1E2] px-4 py-2 rounded-lg font-medium flex items-center space-x-2 transition-colors duration-200 shadow-lg border-2 border-[#97804F]/30"
               >
-                <FaWhatsapp className="text-lg " />
+                <FaWhatsapp className="text-lg" />
                 <span>Book on WhatsApp</span>
               </motion.button>
             </div>
@@ -182,8 +219,8 @@ const Navbar = () => {
               whileTap={{ scale: 0.9 }}
               className={`md:hidden p-2 rounded-md ${
                 scrolled 
-                  ? 'text-gray-700 hover:bg-red-50' 
-                  : 'text-white hover:bg-white/10'
+                  ? 'text-[#392F1D] hover:bg-[#97804F]/10' 
+                  : 'text-[#F9F1E2] hover:bg-[#97804F]'
               }`}
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -201,7 +238,7 @@ const Navbar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black/50 z-40 md:hidden"
+                className="fixed inset-0 bg-[#392F1D]/50 z-40 md:hidden"
                 onClick={() => setIsOpen(false)}
               />
               
@@ -211,19 +248,33 @@ const Navbar = () => {
                 initial="closed"
                 animate="open"
                 exit="closed"
-                className="fixed top-0 right-0 h-full w-64 bg-white shadow-xl z-50 md:hidden"
+                className="fixed top-0 right-0 h-full w-64 bg-[#F9F1E2] shadow-xl z-50 md:hidden border-l-2 border-[#97804F]"
               >
                 <div className="flex flex-col h-full">
                   {/* Header */}
-                  <div className="bg-gradient-to-r from-red-800 to-red-900 p-4">
+                  <div className="bg-gradient-to-r from-[#97804F] to-[#392F1D] p-4 border-b-4 border-[#97804F]">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <GiMeat className="text-2xl text-white" />
-                        <span className="text-white font-bold">Premium Mutton</span>
+                        <div className="flex items-center space-x-2">
+                          <img 
+                            src="/logo.png" 
+                            alt="Hamara Pattal Logo"
+                            className="w-8 h-8 object-contain"
+                          />
+                          <div className="flex flex-col leading-tight">
+                            <div className="flex items-baseline space-x-1">
+                              <span className="text-white font-[Crimson_Pro] font-semibold text-sm">Hamara</span>
+                              <span className="text-white font-[JA_Jayagiri_Sans] font-bold text-base">Pattal</span>
+                            </div>
+                            <span className="text-[#D2B48C] font-[Crimson_Pro] text-xs font-medium mt-0.5">
+                              Aap Hum Aur Noida
+                            </span>
+                          </div>
+                        </div>
                       </div>
                       <button
                         onClick={() => setIsOpen(false)}
-                        className="text-white p-1"
+                        className="text-[#F9F1E2] p-1 hover:bg-[#97804F] rounded"
                       >
                         <GiCrossedBones className="text-xl" />
                       </button>
@@ -231,7 +282,7 @@ const Navbar = () => {
                   </div>
 
                   {/* Menu Items */}
-                  <div className="flex-1 p-4 space-y-2">
+                  <div className="flex-1 p-4 space-y-2 bg-[#F9F1E2]">
                     {navItems.map((item, index) => (
                       <motion.div
                         key={item.name}
@@ -242,10 +293,10 @@ const Navbar = () => {
                       >
                         <Link
                           to={item.path}
-                          className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 ${
+                          className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 border-l-4 ${
                             location.pathname === item.path
-                              ? 'bg-red-100 text-red-800'
-                              : 'text-gray-700 hover:bg-red-50 hover:text-red-700'
+                              ? 'bg-[#97804F]/20 text-[#392F1D] border-[#97804F]'
+                              : 'text-[#392F1D] hover:bg-[#97804F]/10 hover:text-[#392F1D] border-transparent'
                           }`}
                         >
                           {item.icon}
@@ -256,16 +307,16 @@ const Navbar = () => {
                   </div>
 
                   {/* WhatsApp Booking Button - Mobile */}
-                  <div className="p-4 border-t border-gray-200">
+                  <div className="p-4 border-t-4 border-[#97804F] bg-[#F9F1E2]">
                     <motion.button
                       variants={itemVariants}
                       initial="closed"
                       animate="open"
                       transition={{ delay: 0.5 }}
                       onClick={handleWhatsAppBooking}
-                      className="w-full bg-green-600 cursor-pointer hover:bg-green-700 text-white py-3 px-4 rounded-lg font-medium flex items-center justify-center space-x-2 transition-colors duration-200 shadow-lg"
+                      className="w-full bg-[#97804F] cursor-pointer hover:bg-[#392F1D] text-[#F9F1E2] py-3 px-4 rounded-lg font-medium flex items-center justify-center space-x-2 transition-colors duration-200 shadow-lg border-2 border-[#97804F]/30"
                     >
-                      <FaWhatsapp className="text-xl " />
+                      <FaWhatsapp className="text-xl" />
                       <span>Book on WhatsApp</span>
                     </motion.button>
 
@@ -275,10 +326,10 @@ const Navbar = () => {
                       initial="closed"
                       animate="open"
                       transition={{ delay: 0.6 }}
-                      className="mt-4 text-center text-sm text-gray-600"
+                      className="mt-4 text-center text-sm"
                     >
-                      <p>Quick booking available</p>
-                      <p className="text-xs mt-1">24/7 Service</p>
+                      <p className="text-[#392F1D] font-semibold">Quick booking available</p>
+                      <p className="text-xs mt-1 text-[#97804F]">24/7 Service</p>
                     </motion.div>
                   </div>
                 </div>
@@ -294,8 +345,11 @@ const Navbar = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, type: "spring" }}
         onClick={handleWhatsAppBooking}
-        className="md:hidden fixed bottom-6 right-6 z-40 bg-green-600 text-white p-4 rounded-full shadow-2xl shadow-green-600/50"
-        whileHover={{ scale: 1.1 }}
+        className="md:hidden fixed bottom-6 right-6 z-40 bg-[#97804F] text-[#F9F1E2] p-4 rounded-full shadow-2xl shadow-[#97804F]/50 border-2 border-[#97804F]/30"
+        whileHover={{ 
+          scale: 1.1,
+          backgroundColor: "#392F1D"
+        }}
         whileTap={{ scale: 0.9 }}
       >
         <FaWhatsapp className="text-2xl" />
