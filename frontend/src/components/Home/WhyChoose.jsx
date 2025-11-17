@@ -1,33 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 const QualitySection = () => {
-  const parallaxRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (parallaxRef.current) {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
-        parallaxRef.current.style.transform = `translateY(${rate}px)`;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className="relative min-h-screen bg-[#452B1F] overflow-hidden">
-      {/* Parallax Background Image */}
+    <div className="relative min-h-screen bg-[#000000] overflow-hidden">
+      {/* Static Background Image */}
       <div
-        ref={parallaxRef}
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
         style={{
-          backgroundImage: `url("https://plus.unsplash.com/premium_photo-1668616817170-2a74b5cd181d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG11dHRvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=80&w=2000")`,
+          backgroundImage: `url("https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")`,
         }}
       >
         {/* Dark overlay for contrast */}
-        <div className="absolute inset-0 bg-[#452B1F]/70"></div>
+        <div className="absolute inset-0 bg-black/80"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-6 py-20">
@@ -36,13 +20,13 @@ const QualitySection = () => {
           {/* Left Side - Image Content */}
           <div className="relative">
             <div className="relative group">
-              {/* Glow effect using the HeroSection colors */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-[#006400] to-[#964B00] rounded-3xl opacity-20 group-hover:opacity-40 blur-xl transition-all duration-500"></div>
+              {/* Glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#006400] to-[#964B00] rounded-3xl opacity-30 group-hover:opacity-50 blur-xl transition-all duration-500"></div>
 
-              <div className="relative bg-[#452B1F]/80 backdrop-blur-sm rounded-2xl border border-[#6B8E23]/30 p-8">
+              <div className="relative bg-black/90 backdrop-blur-sm rounded-2xl border border-[#6B8E23]/50 p-8">
                 <div className="aspect-square rounded-2xl overflow-hidden border-2 border-[#D2B48C]">
                   <img
-                    src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                     alt="Premium Mutton Cuts"
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
@@ -58,43 +42,58 @@ const QualitySection = () => {
               <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#006400] to-[#6B8E23] px-6 py-3 rounded-full shadow-lg">
                 <div className="w-2 h-2 bg-[#F5F5DC] rounded-full animate-pulse"></div>
                 <span className="text-sm font-semibold text-[#F5F5DC] uppercase tracking-widest">
-                  Mutton Specialists
+                  Authentic Taste
                 </span>
               </div>
 
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#F5F5DC] leading-tight">
                 Why Choose
-                <span className="block bg-gradient-to-r from-[#F5F5DC] to-[#964B00] bg-clip-text text-transparent">
-                  Mutton Master?
+                <span className="block bg-gradient-to-r from-[#F5F5DC] to-[#D2B48C] bg-clip-text text-transparent">
+                  Hamara Pattal?
                 </span>
               </h2>
 
               <div className="w-24 h-1 bg-gradient-to-r from-[#6B8E23] to-[#964B00] rounded-full"></div>
 
-              <p className="text-xl text-[#F5F5DC] leading-relaxed">
-                Experience the difference of generations of expertise in premium
-                meat cutting. Your trusted local butcher shop since 2025.
-              </p>
+              <div className="space-y-4">
+                <p className="text-lg text-[#F5F5DC] leading-relaxed">
+                  At Hamara Pattal, we bring you the authentic taste of home-cooked meals 
+                  with the same love and care that goes into traditional family recipes.
+                </p>
 
-              <p className="text-lg text-[#F5F5DC] leading-relaxed">
-                We take pride in delivering the finest quality mutton with 
-                traditional cutting expertise and modern hygiene standards. 
-                Every cut is carefully prepared to ensure maximum freshness and flavor.
-              </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
+                  {[
+                    { icon: "👨‍🍳", text: "Traditional Family Recipes" },
+                    { icon: "🌿", text: "Fresh Daily Ingredients" },
+                    { icon: "⏱️", text: "Slow Cooked to Perfection" },
+                    { icon: "❤️", text: "Made with Love & Care" }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center gap-3 bg-[#6B8E23]/30 p-3 rounded-lg border border-[#6B8E23]/50">
+                      <span className="text-2xl">{item.icon}</span>
+                      <span className="text-[#F5F5DC] text-sm font-medium">{item.text}</span>
+                    </div>
+                  ))}
+                </div>
 
-              <p className="text-lg text-[#F5F5DC] leading-relaxed">
-                Visit our shop to experience the perfect blend of traditional 
-                butchery skills and contemporary quality standards that make 
-                us the preferred choice for mutton lovers.
-              </p>
+                <p className="text-lg text-[#F5F5DC] leading-relaxed">
+                  Every dish is prepared in small batches to ensure maximum freshness 
+                  and authentic flavor that reminds you of home.
+                </p>
+
+                <div className="bg-gradient-to-r from-[#006400]/40 to-[#964B00]/40 p-4 rounded-xl border-l-4 border-[#D2B48C]">
+                  <p className="text-[#D2B48C] font-semibold italic text-sm">
+                    "Taste the difference that tradition, love, and authentic recipes make in every bite."
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex-1 bg-gradient-to-r from-[#006400] to-[#6B8E23] text-[#F5F5DC] font-bold py-4 px-6 rounded-2xl hover:from-[#006400] hover:to-[#964B00] transition-all duration-300 shadow-2xl hover:shadow-[#006400]/25 transform hover:-translate-y-1 flex items-center justify-center gap-3">
-                <span>Visit Our Shop</span>
+              <button className="flex-1 bg-gradient-to-r from-[#006400] to-[#6B8E23] text-[#F5F5DC] font-bold py-4 px-6 rounded-2xl hover:from-[#006400] hover:to-[#964B00] transition-all duration-300 shadow-2xl hover:shadow-[#006400]/25 transform hover:-translate-y-1 flex items-center justify-center gap-3 group">
+                <span>Order Now</span>
                 <svg
-                  className="w-5 h-5"
+                  className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -103,14 +102,34 @@ const QualitySection = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   />
                 </svg>
               </button>
 
-              <button className="flex-1 bg-transparent text-[#F5F5DC] font-bold py-4 px-6 rounded-2xl border-2 border-[#D2B48C] hover:bg-[#D2B48C] hover:text-[#452B1F] transition-all duration-300 transform hover:-translate-y-1">
-                Call: (555) 123-4567
+              <button className="flex-1 bg-transparent text-[#D2B48C] font-bold py-4 px-6 rounded-2xl border-2 border-[#D2B48C] hover:bg-[#D2B48C] hover:text-black transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 group">
+                <svg
+                  className="w-5 h-5 transform group-hover:scale-110 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <span>Call: +91 XXXXX XXXXX</span>
               </button>
+            </div>
+
+            {/* Service Note */}
+            <div className="pt-4">
+              <p className="text-[#D2B48C] text-sm text-center">
+                🚚 Free delivery across Noida, Delhi NCR & Ghaziabad
+              </p>
             </div>
           </div>
         </div>

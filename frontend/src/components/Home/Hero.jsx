@@ -33,7 +33,7 @@ const HeroSection = () => {
                 </div>
                 <div className="text-xs uppercase tracking-widest border-t-2 border-[#452B1F] pt-2 sm:pt-3 text-[#452B1F] relative">
                   <div className="absolute -top-1 right-0 w-2 h-2 sm:w-3 sm:h-3 bg-[#964B00] rounded-full"></div>
-                  Family Owned
+                  Order Online
                 </div>
               </div>
             </div>
@@ -58,22 +58,22 @@ const HeroSection = () => {
                   </svg>
                 </div>
                 <span className="text-xs sm:text-sm uppercase tracking-widest text-[#006400] font-bold">
-                  Master Butchers
+                 Freshness You Can Trust
                 </span>
               </div>
 
-              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight mb-6 sm:mb-8 leading-none bg-gradient-to-r from-[#006400] to-[#964B00] bg-clip-text text-transparent relative">
-                MUTTON
+              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-8xl font-black tracking-tight mb-6 sm:mb-8 leading-none bg-gradient-to-r from-[#006400] to-[#964B00] bg-clip-text text-transparent relative">
+                 हमारा PATTAL
                 {/* Text shadow for depth */}
                 <div className="absolute inset-0 text-transparent bg-gradient-to-b from-[#964B00]/20 to-transparent bg-clip-text -z-10">
-                  MUTTON
+                   हमारा PATTAL
                 </div>
               </h1>
 
               <div className="w-16 sm:w-20 h-1 sm:h-1.5 bg-gradient-to-r from-[#6B8E23] to-[#964B00] mb-6 sm:mb-8 rounded-full"></div>
 
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light tracking-widest uppercase mb-4 sm:mb-6 text-[#964B00]">
-                Artisanal Butchery & Cuisine
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl   mb-4 sm:mb-6 text-[#964B00]">
+                Aap, Hum और Noida
               </p>
 
               <p className="text-base sm:text-lg text-[#452B1F] max-w-md leading-relaxed mt-6 sm:mt-8 border-l-4 border-[#6B8E23] pl-4 sm:pl-6 py-2 bg-[#F5F5DC]/70 rounded-r-lg">
@@ -107,10 +107,10 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-16">
-              <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-br from-[#006400] to-[#6B8E23] text-white font-bold tracking-widest uppercase text-xs sm:text-sm hover:from-[#006400] hover:to-[#964B00] transition-all duration-300 border-0 rounded-lg shadow-xl sm:shadow-2xl overflow-hidden">
+              <button className=" cursor-pointer group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-br from-[#006400] to-[#6B8E23] text-white font-bold tracking-widest uppercase text-xs sm:text-sm hover:from-[#006400] hover:to-[#964B00] transition-all duration-300 border-0 rounded-lg shadow-xl sm:shadow-2xl overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/20 to-transparent"></div>
                 <span className="relative flex items-center justify-center gap-2 sm:gap-3">
-                  View Our Cuts
+                  Order Now
                   <svg
                     className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                     fill="none"
@@ -127,9 +127,9 @@ const HeroSection = () => {
                 </span>
               </button>
 
-              <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-transparent text-[#006400] font-bold tracking-widest uppercase text-xs sm:text-sm border-2 border-[#006400] hover:bg-[#006400] hover:text-white transition-all duration-300 rounded-lg overflow-hidden">
+              <button className="cursor-pointer group relative px-6 sm:px-8 py-3 sm:py-4 bg-transparent text-[#006400] font-bold tracking-widest uppercase text-xs sm:text-sm border-2 border-[#006400] hover:bg-[#006400] hover:text-white transition-all duration-300 rounded-lg overflow-hidden">
                 <div className="absolute inset-0 bg-[#006400] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative">Book Consultation</span>
+                <span className="relative">Contact Us</span>
               </button>
             </div>
 

@@ -46,7 +46,9 @@ const Footer = () => {
                 🥩
               </div>
               <div>
-                <h3 className="text-xl font-bold text-[#F5F5DC]">Mutton Master</h3>
+                <h3 className="text-xl font-bold text-[#F5F5DC]">
+                  Hamara Pattal
+                </h3>
                 <p className="text-[#D2B48C] text-sm">Since 2025</p>
               </div>
             </div>
@@ -182,7 +184,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="text-center lg:text-right">
               <p className="text-[#D2B48C] text-sm">
-                © 2024 Mutton Master. All rights reserved. | Made with ❤️ in
+                © 2025 Hamara Pattal. All rights reserved. | Made with ❤️ in
                 India
               </p>
             </div>

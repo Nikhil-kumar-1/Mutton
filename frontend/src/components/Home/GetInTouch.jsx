@@ -29,9 +29,10 @@ const GetInTouch = () => {
                     📞
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#452B1F] mb-1">Call Us</h4>
-                    <p className="text-[#452B1F]">+91 98765 43210</p>
-                    <p className="text-[#452B1F]">+91 98765 43211</p>
+                    <h4 className="font-bold text-[#452B1F] mb-1">Call Us:</h4>
+                    <p className="text-[#452B1F]">+91 93190 71784</p>
+                    <h4 className="font-bold text-[#452B1F] mb-1">Email Us:</h4>
+                    <p className="text-[#452B1F]">hamarapattal@gmail.com</p>
                     <p className="text-sm text-[#006400] font-medium mt-1">Available 7AM - 9PM</p>
                   </div>
                 </div>
@@ -43,9 +44,9 @@ const GetInTouch = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-[#452B1F] mb-1">Visit Our Shop</h4>
-                    <p className="text-[#452B1F]">123 Premium Street</p>
-                    <p className="text-[#452B1F]">Meat District, City - 560001</p>
-                    <p className="text-sm text-[#006400] font-medium mt-1">Free parking available</p>
+                    <p className="text-[#452B1F]">SHOP NO 23,24 NAMBARDAR PLAZA SECTOR 1 GREATER NOIDA WEST,</p>
+                    <p className="text-[#452B1F]">BISHRAKH , DADRI TEHSIL -2, Gautam Buddha Nagar , Uttar Pradesh-201306</p>
+                    
                   </div>
                 </div>
 

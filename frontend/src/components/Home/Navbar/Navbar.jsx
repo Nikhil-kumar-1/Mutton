@@ -10,7 +10,7 @@ import {
   FaWhatsapp,
   FaPhone, 
   FaHome,
-  FaUtensils,
+  FaBlog,
   FaInfoCircle,
   FaCalendarCheck
 } from 'react-icons/fa';
@@ -38,7 +38,7 @@ const Navbar = () => {
 
   // WhatsApp booking function
   const handleWhatsAppBooking = () => {
-    const phoneNumber = "919876543210"; // Replace with your actual number
+    const phoneNumber = "9193190 71784"; // Replace with your actual number
     const message = "Hello! I'd like to book mutton meat from your website. Please provide me with more details.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -47,7 +47,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', path: '/', icon: <FaHome className="text-lg" /> },
     { name: 'Products', path: '/products', icon: <GiMeat className="text-lg" /> },
-    { name: 'Recipes', path: '/recipes', icon: <FaUtensils className="text-lg" /> },
+    { name: 'Blog', path: '/blog', icon: <FaBlog className="text-lg" /> },
     { name: 'About', path: '/about', icon: <FaInfoCircle className="text-lg" /> },
     { name: 'Contact', path: '/contact', icon: <FaPhone className="text-lg" /> },
   ];
@@ -114,24 +114,26 @@ const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled 
             ? 'bg-[#F9F1E2] shadow-lg border-b border-[#97804F]/20' 
-            : 'bg-gradient-to-r from-[#97804F] to-[#392F1D]'
+            : 'bg-gradient-to-r from-[#395E33] to-[#2A4A25]' // Changed to green gradient
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Logo Section - Fixed with proper colors */}
+            {/* Logo Section */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex-shrink-0 flex items-center"
             >
               <Link to="/" className="flex items-center space-x-3 no-underline">
-                {/* Logo Image */}
-                <img 
-                  src="/logo.png" 
-                  alt="Hamara Pattal Logo"
-                  className="w-20 h-20 object-contain flex-shrink-0"
-                />
+                {/* Logo Image with white background for visibility */}
+                <div className="w-12 h-12 bg-white rounded-full p-1 flex items-center justify-center shadow-lg">
+                  <img 
+                    src="/logo.png" 
+                    alt="Hamara Pattal Logo"
+                    className="w-10 h-10 object-contain"
+                  />
+                </div>
                 
                 {/* Brand Text */}
                 <div className="flex flex-col leading-tight">
@@ -141,7 +143,7 @@ const Navbar = () => {
                     <span
                       className="font-[Crimson_Pro] font-semibold text-lg tracking-tight"
                       style={{ 
-                        color: scrolled ? "#395E33" : "#F9F1E2" 
+                        color: scrolled ? "#395E33" : "#FFFFFF" // White when not scrolled
                       }}
                     >
                       हमारा
@@ -150,18 +152,18 @@ const Navbar = () => {
                     <span
                       className="font-[JA_Jayagiri_Sans] font-bold text-xl tracking-tight"
                       style={{ 
-                        color: scrolled ? "#395E33" : "#F9F1E2" 
+                        color: scrolled ? "#395E33" : "#FFFFFF" // White when not scrolled
                       }}
                     >
                       Pattal
                     </span>
                   </div>
                   
-                  {/* Tagline - Now visible with proper colors */}
+                  {/* Tagline */}
                   <span
                     className="font-[Crimson_Pro] text-sm font-medium tracking-wide mt-0.5"
                     style={{ 
-                      color: scrolled ? "#8A6A47" : "#D2B48C" 
+                      color: scrolled ? "#8A6A47" : "#D2B48C" // Light brown when not scrolled
                     }}
                   >
                     Aap Hum और Noida
@@ -186,10 +188,10 @@ const Navbar = () => {
                         location.pathname === item.path
                           ? scrolled
                             ? 'bg-[#97804F]/20 text-[#392F1D] border-b-2 border-[#97804F]'
-                            : 'bg-[#F9F1E2]/20 text-[#F9F1E2] border-b-2 border-[#F9F1E2]'
+                            : 'bg-white/20 text-white border-b-2 border-white'
                           : scrolled
                           ? 'text-[#392F1D] hover:text-[#97804F] hover:bg-[#F9F1E2]'
-                          : 'text-[#F9F1E2] hover:text-[#FFFFFF] hover:bg-[#97804F]/30'
+                          : 'text-white hover:text-[#F9F1E2] hover:bg-white/10'
                       }`}
                     >
                       {item.icon}
@@ -207,7 +209,13 @@ const Navbar = () => {
                 whileHover="hover"
                 whileTap="tap"
                 onClick={handleWhatsAppBooking}
-                className="bg-[#97804F] cursor-pointer hover:bg-[#392F1D] text-[#F9F1E2] px-4 py-2 rounded-lg font-medium flex items-center space-x-2 transition-colors duration-200 shadow-lg border-2 border-[#97804F]/30"
+                className={`${
+                  scrolled 
+                    ? 'bg-[#395E33] hover:bg-[#2A4A25] text-white' 
+                    : 'bg-white hover:bg-[#F9F1E2] text-[#395E33]'
+                } px-4 py-2 rounded-lg font-medium flex items-center space-x-2 transition-colors duration-200 shadow-lg border-2 ${
+                  scrolled ? 'border-[#395E33]/30' : 'border-white/30'
+                } cursor-pointer`}
               >
                 <FaWhatsapp className="text-lg" />
                 <span>Book on WhatsApp</span>
@@ -220,7 +228,7 @@ const Navbar = () => {
               className={`md:hidden p-2 rounded-md ${
                 scrolled 
                   ? 'text-[#392F1D] hover:bg-[#97804F]/10' 
-                  : 'text-[#F9F1E2] hover:bg-[#97804F]'
+                  : 'text-white hover:bg-white/20'
               }`}
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -238,7 +246,7 @@ const Navbar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-[#392F1D]/50 z-40 md:hidden"
+                className="fixed inset-0 bg-black/50 z-40 md:hidden"
                 onClick={() => setIsOpen(false)}
               />
               
@@ -248,22 +256,24 @@ const Navbar = () => {
                 initial="closed"
                 animate="open"
                 exit="closed"
-                className="fixed top-0 right-0 h-full w-64 bg-[#F9F1E2] shadow-xl z-50 md:hidden border-l-2 border-[#97804F]"
+                className="fixed top-0 right-0 h-full w-64 bg-[#F9F1E2] shadow-xl z-50 md:hidden border-l-2 border-[#395E33]"
               >
                 <div className="flex flex-col h-full">
                   {/* Header */}
-                  <div className="bg-gradient-to-r from-[#97804F] to-[#392F1D] p-4 border-b-4 border-[#97804F]">
+                  <div className="bg-gradient-to-r from-[#395E33] to-[#2A4A25] p-4 border-b-4 border-[#395E33]">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         <div className="flex items-center space-x-2">
-                          <img 
-                            src="/logo.png" 
-                            alt="Hamara Pattal Logo"
-                            className="w-8 h-8 object-contain"
-                          />
+                          <div className="w-8 h-8 bg-white rounded-full p-1 flex items-center justify-center">
+                            <img 
+                              src="/logo.png" 
+                              alt="Hamara Pattal Logo"
+                              className="w-6 h-6 object-contain"
+                            />
+                          </div>
                           <div className="flex flex-col leading-tight">
                             <div className="flex items-baseline space-x-1">
-                              <span className="text-white font-[Crimson_Pro] font-semibold text-sm">Hamara</span>
+                              <span className="text-white font-[Crimson_Pro] font-semibold text-sm">हमारा</span>
                               <span className="text-white font-[JA_Jayagiri_Sans] font-bold text-base">Pattal</span>
                             </div>
                             <span className="text-[#D2B48C] font-[Crimson_Pro] text-xs font-medium mt-0.5">
@@ -274,7 +284,7 @@ const Navbar = () => {
                       </div>
                       <button
                         onClick={() => setIsOpen(false)}
-                        className="text-[#F9F1E2] p-1 hover:bg-[#97804F] rounded"
+                        className="text-white p-1 hover:bg-white/20 rounded"
                       >
                         <GiCrossedBones className="text-xl" />
                       </button>
@@ -295,8 +305,8 @@ const Navbar = () => {
                           to={item.path}
                           className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 border-l-4 ${
                             location.pathname === item.path
-                              ? 'bg-[#97804F]/20 text-[#392F1D] border-[#97804F]'
-                              : 'text-[#392F1D] hover:bg-[#97804F]/10 hover:text-[#392F1D] border-transparent'
+                              ? 'bg-[#395E33]/20 text-[#395E33] border-[#395E33]'
+                              : 'text-[#392F1D] hover:bg-[#395E33]/10 hover:text-[#395E33] border-transparent'
                           }`}
                         >
                           {item.icon}
@@ -307,14 +317,14 @@ const Navbar = () => {
                   </div>
 
                   {/* WhatsApp Booking Button - Mobile */}
-                  <div className="p-4 border-t-4 border-[#97804F] bg-[#F9F1E2]">
+                  <div className="p-4 border-t-4 border-[#395E33] bg-[#F9F1E2]">
                     <motion.button
                       variants={itemVariants}
                       initial="closed"
                       animate="open"
                       transition={{ delay: 0.5 }}
                       onClick={handleWhatsAppBooking}
-                      className="w-full bg-[#97804F] cursor-pointer hover:bg-[#392F1D] text-[#F9F1E2] py-3 px-4 rounded-lg font-medium flex items-center justify-center space-x-2 transition-colors duration-200 shadow-lg border-2 border-[#97804F]/30"
+                      className="w-full bg-[#395E33] cursor-pointer hover:bg-[#2A4A25] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-center space-x-2 transition-colors duration-200 shadow-lg border-2 border-[#395E33]/30"
                     >
                       <FaWhatsapp className="text-xl" />
                       <span>Book on WhatsApp</span>
@@ -328,8 +338,8 @@ const Navbar = () => {
                       transition={{ delay: 0.6 }}
                       className="mt-4 text-center text-sm"
                     >
-                      <p className="text-[#392F1D] font-semibold">Quick booking available</p>
-                      <p className="text-xs mt-1 text-[#97804F]">24/7 Service</p>
+                      <p className="text-[#395E33] font-semibold">Quick booking available</p>
+                      <p className="text-xs mt-1 text-[#8A6A47]">24/7 Service</p>
                     </motion.div>
                   </div>
                 </div>
@@ -345,10 +355,10 @@ const Navbar = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, type: "spring" }}
         onClick={handleWhatsAppBooking}
-        className="md:hidden fixed bottom-6 right-6 z-40 bg-[#97804F] text-[#F9F1E2] p-4 rounded-full shadow-2xl shadow-[#97804F]/50 border-2 border-[#97804F]/30"
+        className="md:hidden fixed bottom-6 right-6 z-40 bg-[#395E33] text-white p-4 rounded-full shadow-2xl shadow-[#395E33]/50 border-2 border-white/30"
         whileHover={{ 
           scale: 1.1,
-          backgroundColor: "#392F1D"
+          backgroundColor: "#2A4A25"
         }}
         whileTap={{ scale: 0.9 }}
       >

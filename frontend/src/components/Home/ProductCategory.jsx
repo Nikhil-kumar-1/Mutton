@@ -4,71 +4,71 @@ const ProductCategoryFull = () => {
   const categories = [
     {
       id: 1,
-      name: "Premium Mutton Cuts",
+      name: "Meat & Meat Products",
       icon: "🥩",
-      description: "Hand-selected premium cuts",
+      description: "Premium quality meat including poultry and game",
       image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-      items: "15+ Varieties",
+      items: "Fresh Mutton, Chicken & Game",
       featured: true,
-      priceRange: "₹450 - ₹850/kg"
+      code: "08"
     },
     {
       id: 2,
-      name: "Traditional Curry Cuts",
-      icon: "🍛",
-      description: "Perfect for traditional dishes",
-      image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      items: "12+ Varieties",
+      name: "Eggs & Egg Products",
+      icon: "🥚",
+      description: "Fresh eggs and egg-based products",
+      image: "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      items: "Farm Fresh Eggs & Products",
       featured: false,
-      priceRange: "₹380 - ₹650/kg"
+      code: "10"
     },
     {
       id: 3,
-      name: "Boneless Special",
-      icon: "🍖",
-      description: "100% boneless pieces",
-      image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      items: "8+ Varieties",
+      name: "Fish & Seafood",
+      icon: "🐟",
+      description: "Fresh fish, molluscs, crustaceans, and echinoderms",
+      image: "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      items: "Variety of Fish & Seafood",
       featured: false,
-      priceRange: "₹550 - ₹900/kg"
+      code: "09"
     },
     {
       id: 4,
-      name: "Family Packs",
-      icon: "👨‍👩‍👧‍👦",
-      description: "Economical family packs",
-      image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      items: "6+ Packs",
+      name: "Indian Sweets",
+      icon: "🍬",
+      description: "Traditional Indian sweets and desserts",
+      image: "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      items: "20+ Traditional Sweets",
       featured: false,
-      priceRange: "₹299 - ₹999/pack"
+      code: "18"
     },
     {
       id: 5,
-      name: "Marinated Ready",
-      icon: "🧂",
-      description: "Pre-marinated for instant cooking",
-      image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      items: "10+ Flavors",
+      name: "Indian Snacks & Savouries",
+      icon: "🥨",
+      description: "Authentic Indian snacks and savoury items",
+      image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      items: "15+ Snack Varieties",
       featured: false,
-      priceRange: "₹500 - ₹950/kg"
+      code: "18"
     },
     {
       id: 6,
-      name: "Special Occasion",
-      icon: "🎉",
-      description: "Premium cuts for special events",
-      image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      items: "5+ Specials",
+      name: "Poultry Products",
+      icon: "🍗",
+      description: "Fresh chicken and poultry items",
+      image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      items: "Chicken & Poultry Range",
       featured: false,
-      priceRange: "₹600 - ₹1200/kg"
+      code: "08"
     }
   ];
 
   const features = [
     { icon: "⭐", text: "Premium Quality", color: "text-[#006400]" },
-    { icon: "🔪", text: "Expertly Cut", color: "text-[#006400]" },
-    { icon: "🚚", text: "Same Day Delivery", color: "text-[#006400]" },
-    { icon: "🌿", text: "100% Natural", color: "text-[#006400]" }
+    { icon: "🌿", text: "100% Natural", color: "text-[#006400]" },
+    { icon: "🏠", text: "Traditional Recipes", color: "text-[#006400]" },
+    { icon: "🚚", text: "Fresh Delivery", color: "text-[#006400]" }
   ];
 
   return (
@@ -79,20 +79,20 @@ const ProductCategoryFull = () => {
           <div className="text-center max-w-full mx-auto">
             <div className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-lg mb-6 border border-[#6B8E23]/20">
               <div className="w-2 h-2 bg-[#006400] rounded-full animate-pulse"></div>
-              <span className="text-sm font-semibold text-[#006400] uppercase tracking-widest">Premium Collection</span>
+              <span className="text-sm font-semibold text-[#006400] uppercase tracking-widest">Food Categories</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-[#452B1F] mb-6 leading-tight">
-              Premium Mutton
+              Our Premium
               <span className="block bg-gradient-to-r from-[#006400] to-[#964B00] bg-clip-text text-transparent">
-                Collection
+                Food Range
               </span>
             </h1>
             
             <div className="w-32 h-1 bg-gradient-to-r from-[#6B8E23] to-[#964B00] mx-auto mb-8 rounded-full"></div>
             
             <p className="text-xl md:text-2xl text-[#452B1F] mb-5 max-w-full mx-auto leading-relaxed">
-              Discover our exquisite range of mutton cuts, expertly prepared by master butchers with over two decades of tradition and expertise
+              Explore our diverse range of premium food products, carefully categorized for your convenience
             </p>
           </div>
         </div>
@@ -138,14 +138,14 @@ const ProductCategoryFull = () => {
                     </div>
                   )}
                   
-                  {/* Item Count */}
+                  {/* Category Code */}
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-[#006400] font-bold text-sm">{category.items}</span>
+                    <span className="text-[#006400] font-bold text-sm">Code: {category.code}</span>
                   </div>
                   
-                  {/* Price Range */}
+                  {/* Items Count */}
                   <div className="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-2 rounded-xl">
-                    <span className="font-bold text-sm">{category.priceRange}</span>
+                    <span className="font-bold text-sm">{category.items}</span>
                   </div>
                 </div>
 
@@ -163,18 +163,58 @@ const ProductCategoryFull = () => {
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    <button className="flex-1 bg-gradient-to-r from-[#006400] to-[#6B8E23] text-white font-semibold py-3 px-4 rounded-xl hover:from-[#006400] hover:to-[#964B00] transition-all duration-300 text-sm">
-                      View Cuts
-                    </button>
-                    <button className="flex-1 bg-white text-[#452B1F] font-semibold py-3 px-4 border-2 border-[#D2B48C] rounded-xl hover:border-[#006400] hover:text-[#006400] transition-all duration-300 text-sm">
-                      Quick Order
-                    </button>
+                  {/* Information Only - No Buttons */}
+                  <div className="bg-gradient-to-r from-[#F5F5DC] to-[#D2B48C] p-4 rounded-xl border-l-4 border-[#006400]">
+                    <p className="text-[#006400] font-semibold text-sm text-center">
+                      Premium Quality • Traditional Taste
+                    </p>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Additional Information Section */}
+          <div className="max-w-4xl mx-auto mt-16 bg-white rounded-3xl p-8 shadow-xl border border-[#D2B48C]">
+            <h2 className="text-3xl font-black text-[#452B1F] text-center mb-6">
+              About Our Food Categories
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-[#006400]">Our Standards</h3>
+                <ul className="space-y-2 text-[#452B1F]">
+                  <li className="flex items-center gap-2">
+                    <span className="text-[#006400]">✓</span>
+                    Premium quality ingredients
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-[#006400]">✓</span>
+                    Traditional preparation methods
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-[#006400]">✓</span>
+                    Fresh and natural products
+                  </li>
+                </ul>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-[#006400]">Categories Include</h3>
+                <ul className="space-y-2 text-[#452B1F]">
+                  <li className="flex items-center gap-2">
+                    <span className="text-[#964B00]">•</span>
+                    Meat & Poultry Products
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-[#964B00]">•</span>
+                    Fish & Seafood
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-[#964B00]">•</span>
+                    Traditional Sweets & Snacks
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
