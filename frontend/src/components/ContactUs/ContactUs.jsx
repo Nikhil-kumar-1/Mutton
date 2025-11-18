@@ -7,7 +7,7 @@ const ContactUs = () => {
       icon: "📞",
       label: "Call Us",
       value: "+91 93190 71784",
-      sub: "7AM - 9PM",
+      sub: "12PM - 2AM",
     },
     {
       icon: "📍",

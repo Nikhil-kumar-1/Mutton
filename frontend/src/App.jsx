@@ -7,6 +7,7 @@ import About from "./components/About/About";
 import ContactUs from "./components/ContactUs/ContactUs";
 import PrivacyPolicy from "./components/Home/Footer/PrivacyPolicy";
 import TermsOfService from "./components/Home/Footer/TermsOfServices";
+import SmoothScrollToTop from "./components/ScrollToTop";
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
       <Navbar />
 
       {/* Routes define here */}
+      <SmoothScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

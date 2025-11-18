@@ -33,7 +33,7 @@ const GetInTouch = () => {
                     <p className="text-[#452B1F]">+91 93190 71784</p>
                     <h4 className="font-bold text-[#452B1F] mb-1">Email Us:</h4>
                     <p className="text-[#452B1F]">hamarapattal@gmail.com</p>
-                    <p className="text-sm text-[#006400] font-medium mt-1">Available 7AM - 9PM</p>
+                    <p className="text-sm text-[#006400] font-medium mt-1">Available 12PM - 2AM</p>
                   </div>
                 </div>
 
