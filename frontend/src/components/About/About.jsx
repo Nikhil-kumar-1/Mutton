@@ -361,7 +361,7 @@ We aim to bring back India’s traditional way of eating together on a pattal, w
             </button>
 
             <button className="bg-white text-[#006400] font-semibold py-3 px-8 rounded-lg border-2 border-[#006400] hover:bg-[#006400] hover:text-white transition-all duration-300 flex items-center gap-2">
-              <span>Call: +91 XXXXX XXXXX</span>
+              <span>Call: +91 93190 71784</span>
               <svg
                 className="w-4 h-4"
                 fill="none"
