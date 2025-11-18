@@ -1,44 +1,58 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const quickLinks = [
-    { name: "Home", href: "#" },
-    { name: "About Us", href: "#" },
-    { name: "Our Products", href: "#" },
-    { name: "Recipes", href: "#" },
-    { name: "Shop Location", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Our Products", path: "/products" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const products = [
-    { name: "Fresh Mutton", href: "#" },
-    { name: "Mutton Masalas", href: "#" },
-    { name: "Marinated Mutton", href: "#" },
-    { name: "Mutton Curry Cuts", href: "#" },
-    { name: "Mutton Biryani Pack", href: "#" },
-    { name: "Specialty Cuts", href: "#" },
+    { name: "Fresh Mutton", path: "/products" },
+    { name: "Mutton Masalas", path: "/products" },
+    { name: "Marinated Mutton", path: "/products" },
+    { name: "Mutton Curry Cuts", path: "/products" },
+    { name: "Mutton Biryani Pack", path: "/products" },
+    { name: "Specialty Cuts", path: "/products" },
   ];
 
   const legalLinks = [
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
-    { name: "Return Policy", href: "#" },
-    { name: "Shipping Policy", href: "#" },
-    { name: "Quality Standards", href: "#" },
+    { name: "Privacy Policy", path: "/privacy-policy" },
+    { name: "Terms of Service", path: "/terms" },
+    { name: "Return Policy", path: "/return-policy" },
+    
   ];
 
   const contactInfo = [
     { icon: "📞", text: "+91 98765 43210" },
-    { icon: "📧", text: "info@muttonmaster.com" },
-    { icon: "📍", text: "123 Premium Street, Meat Market, Delhi - 110006" },
+    { icon: "📧", text: "hamarapattal@gmail.com" },
+    { icon: "📍", text: "SHOP NO 23,24 NAMBARDAR PLAZA SECTOR 1 GREATER NOIDA WEST,BISHRAKH , DADRI TEHSIL -2, Gautam Buddha Nagar , Uttar Pradesh-201306" },
     { icon: "🕒", text: "7:00 AM - 9:00 PM (Daily)" },
   ];
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleCall = () => {
+    window.open('tel:+91 93190 71784');
+  };
+
+  const handleWhatsApp = () => {
+    const phoneNumber = "+91 93190 71784";
+    const message = "Hello! I'd like to know more about Hamara Pattal products.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
     <footer className="bg-gradient-to-b from-[#452B1F] to-[#392F1D] text-[#F5F5DC]">
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
@@ -93,13 +107,13 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.path}
                     className="text-[#F5F5DC] hover:text-[#D2B48C] transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <span className="w-2 h-2 bg-[#6B8E23] rounded-full group-hover:bg-[#D2B48C] transition-colors"></span>
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -113,13 +127,13 @@ const Footer = () => {
             <ul className="space-y-3">
               {products.map((product, index) => (
                 <li key={index}>
-                  <a
-                    href={product.href}
+                  <Link
+                    to={product.path}
                     className="text-[#F5F5DC] hover:text-[#D2B48C] transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <span className="w-2 h-2 bg-[#006400] rounded-full group-hover:bg-[#D2B48C] transition-colors"></span>
                     {product.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -139,8 +153,11 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* Newsletter */}
-            <div className="bg-[#392F1D] rounded-xl p-4 border border-[#D2B48C]">
+           
+            
+          </div>
+           {/* Newsletter */}
+          <div className="bg-[#392F1D] h-60 rounded-xl p-4 border border-[#D2B48C]">
               <h4 className="font-bold mb-3 text-[#D2B48C]">Newsletter</h4>
               <p className="text-[#F5F5DC] text-sm mb-3">
                 Get recipes, offers, and cooking tips delivered to your inbox.
@@ -160,7 +177,6 @@ const Footer = () => {
                 </button>
               </form>
             </div>
-          </div>
         </div>
       </div>
 
@@ -171,13 +187,13 @@ const Footer = () => {
             {/* Legal Links */}
             <div className="flex flex-wrap justify-center gap-6">
               {legalLinks.map((link, index) => (
-                <a
+                <Link
                   key={index}
-                  href={link.href}
+                  to={link.path}
                   className="text-[#D2B48C] hover:text-[#F5F5DC] transition-colors duration-300 text-sm"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -194,13 +210,22 @@ const Footer = () => {
 
       {/* Quick Action Buttons */}
       <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
-        <button className="w-14 h-14 bg-[#006400] rounded-full flex items-center justify-center text-white shadow-lg hover:bg-[#6B8E23] transition-colors duration-300 transform hover:scale-110">
+        <button 
+          onClick={handleCall}
+          className="w-14 h-14 bg-[#006400] rounded-full flex items-center justify-center text-white shadow-lg hover:bg-[#6B8E23] transition-colors duration-300 transform hover:scale-110"
+        >
           <span className="text-2xl">📞</span>
         </button>
-        <button className="w-14 h-14 bg-[#6B8E23] rounded-full flex items-center justify-center text-white shadow-lg hover:bg-[#964B00] transition-colors duration-300 transform hover:scale-110">
+        <button 
+          onClick={handleWhatsApp}
+          className="w-14 h-14 bg-[#6B8E23] rounded-full flex items-center justify-center text-white shadow-lg hover:bg-[#964B00] transition-colors duration-300 transform hover:scale-110"
+        >
           <span className="text-2xl">💬</span>
         </button>
-        <button className="w-14 h-14 bg-[#964B00] rounded-full flex items-center justify-center text-white shadow-lg hover:bg-[#452B1F] transition-colors duration-300 transform hover:scale-110">
+        <button 
+          onClick={scrollToTop}
+          className="w-14 h-14 bg-[#964B00] rounded-full flex items-center justify-center text-white shadow-lg hover:bg-[#452B1F] transition-colors duration-300 transform hover:scale-110"
+        >
           <span className="text-2xl">⬆️</span>
         </button>
       </div>

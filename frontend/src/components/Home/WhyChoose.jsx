@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const QualitySection = () => {
   return (
@@ -90,7 +91,7 @@ const QualitySection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex-1 bg-gradient-to-r from-[#006400] to-[#6B8E23] text-[#F5F5DC] font-bold py-4 px-6 rounded-2xl hover:from-[#006400] hover:to-[#964B00] transition-all duration-300 shadow-2xl hover:shadow-[#006400]/25 transform hover:-translate-y-1 flex items-center justify-center gap-3 group">
+            <Link to="/order">  <button className="flex-1 bg-gradient-to-r from-[#006400] to-[#6B8E23] text-[#F5F5DC] font-bold py-4 px-6 rounded-2xl hover:from-[#006400] hover:to-[#964B00] transition-all duration-300 shadow-2xl hover:shadow-[#006400]/25 transform hover:-translate-y-1 flex items-center justify-center gap-3 group">
                 <span>Order Now</span>
                 <svg
                   className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
@@ -105,7 +106,7 @@ const QualitySection = () => {
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   />
                 </svg>
-              </button>
+              </button></Link>
 
               <button className="flex-1 bg-transparent text-[#D2B48C] font-bold py-4 px-6 rounded-2xl border-2 border-[#D2B48C] hover:bg-[#D2B48C] hover:text-black transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 group">
                 <svg
@@ -121,7 +122,7 @@ const QualitySection = () => {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                <span>Call: +91 XXXXX XXXXX</span>
+                <span>Call: +91 93190 71784</span>
               </button>
             </div>
 

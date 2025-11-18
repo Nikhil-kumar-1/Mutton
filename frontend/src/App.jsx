@@ -5,6 +5,8 @@ import Home from "./components/Home/Home";
 import Footer from "./components/Home/Footer/Footer";
 import About from "./components/About/About";
 import ContactUs from "./components/ContactUs/ContactUs";
+import PrivacyPolicy from "./components/Home/Footer/PrivacyPolicy";
+import TermsOfService from "./components/Home/Footer/TermsOfServices";
 
 
 const App = () => {
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
       </Routes>
 
       <Footer />

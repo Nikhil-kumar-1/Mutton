@@ -6,16 +6,16 @@ const ContactUs = () => {
     {
       icon: "📞",
       label: "Call Us",
-      value: "+91 98765 43210",
+      value: "+91 93190 71784",
       sub: "7AM - 9PM",
     },
     {
       icon: "📍",
       label: "Visit Us",
-      value: "123 Premium Street",
+      value: "SHOP NO 23,24 NAMBARDAR PLAZA SECTOR 1 GREATER NOIDA WEST BISHRAKH , DADRI TEHSIL -2, Gautam Buddha Nagar Uttar Pradesh-201306",
       sub: "Free Parking",
     },
-    { icon: "🕒", label: "Shop Hours", value: "7AM - 9PM", sub: "All Days" },
+    { icon: "🕒", label: "Shop Hours", value: "7AM - 11PM", sub: "All Days" },
   ];
 
   const services = [
@@ -272,7 +272,7 @@ const ContactUs = () => {
                   Emergency Helpline
                 </div>
                 <div className="text-white text-lg font-black">
-                  +91 98765 43210
+                  +91 93190 71784
                 </div>
               </div>
               <div className="text-[#F5F5DC] text-xs sm:text-sm">
