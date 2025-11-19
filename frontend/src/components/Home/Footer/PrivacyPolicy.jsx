@@ -6,22 +6,48 @@ const PrivacyPolicy = () => {
     {
       icon: "📋",
       title: "Information We Collect",
-      description: "We collect information that helps us serve you better, including your name, contact details, and preferences to personalize your experience."
+      description: "We collect information that helps us serve you better, including your name, contact details, and preferences to personalize your experience.",
+      details: [
+        "Personal Information: Name, phone number, email, delivery address",
+        "Payment Details: Processed securely by third-party gateways",
+        "Automated Data: IP address, browser type, device information",
+        "Order History: Your preferences and feedback"
+      ]
     },
     {
       icon: "🔍",
       title: "How We Use Your Data",
-      description: "Your information helps us process orders, improve our services, and communicate important updates about your meals and offers."
+      description: "Your information helps us process orders, improve our services, and communicate important updates about your meals and offers.",
+      details: [
+        "Process and deliver your orders efficiently",
+        "Communicate order updates and promotions",
+        "Improve website performance and user experience",
+        "Enhance our food quality and service standards",
+        "Prevent fraud and maintain security"
+      ]
     },
     {
       icon: "🤝",
       title: "Data Sharing",
-      description: "We respect your privacy and only share necessary information with trusted partners for order delivery and payment processing."
+      description: "We respect your privacy and only share necessary information with trusted partners for order delivery and payment processing.",
+      details: [
+        "Delivery partners for order fulfillment",
+        "Payment gateways for secure transactions",
+        "Analytics tools for service improvement",
+        "Marketing tools for communication",
+        "We NEVER sell your personal data"
+      ]
     },
     {
       icon: "🛡️",
       title: "Data Security",
-      description: "We implement industry-standard security measures to protect your personal information from unauthorized access."
+      description: "We implement industry-standard security measures to protect your personal information from unauthorized access.",
+      details: [
+        "Industry-standard security measures",
+        "Protected against unauthorized access",
+        "Secure data storage and processing",
+        "Regular security assessments"
+      ]
     }
   ];
 
@@ -45,6 +71,29 @@ const PrivacyPolicy = () => {
       icon: "🚫",
       title: "Right to Object",
       description: "You can object to certain types of data processing activities."
+    }
+  ];
+
+  const cookiesInfo = [
+    {
+      type: "Essential",
+      purpose: "Website functionality and order processing",
+      example: "Session management, cart items"
+    },
+    {
+      type: "Performance",
+      purpose: "Improve user experience",
+      example: "Page load times, navigation patterns"
+    },
+    {
+      type: "Preference",
+      purpose: "Remember your choices",
+      example: "Language settings, dietary preferences"
+    },
+    {
+      type: "Marketing",
+      purpose: "Personalized offers",
+      example: "Special discounts, recommendations"
     }
   ];
 
@@ -95,7 +144,7 @@ const PrivacyPolicy = () => {
                   <li>Transparent data collection practices</li>
                   <li>Secure storage and processing</li>
                   <li>Your rights and choices clearly explained</li>
-                  <li>No hidden tracking or data sharing</li>
+                  <li>No hidden tracking or data selling</li>
                 </ul>
 
                 <p className="text-[#452B1F] leading-relaxed">
@@ -145,7 +194,7 @@ const PrivacyPolicy = () => {
                     />
                   </svg>
                 </button>
-                <a href="mailto:privacy@hamarapattal.com" className="flex-1">
+                <a href="mailto:hamarapattal@gmail.com" className="flex-1">
                   <button className="w-full bg-transparent text-[#006400] font-semibold py-3 px-6 rounded-lg border-2 border-[#006400] hover:bg-[#006400] hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
                     <span>Ask Questions</span>
                     <svg
@@ -229,17 +278,71 @@ const PrivacyPolicy = () => {
                     {section.title}
                   </h3>
                 </div>
-                <p className="text-[#452B1F] leading-relaxed">
+                <p className="text-[#452B1F] leading-relaxed mb-4">
                   {section.description}
                 </p>
+                <ul className="space-y-2">
+                  {section.details.map((detail, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-[#006400] mt-1">•</span>
+                      <span className="text-[#452B1F] text-sm">{detail}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Your Rights Section */}
+      {/* Cookies Section */}
       <section className="py-16 bg-gradient-to-b from-white to-[#F5F5DC]">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-black text-[#452B1F] mb-4">
+              Cookies & Tracking
+            </h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-[#006400] to-[#964B00] mx-auto rounded-full"></div>
+            <p className="text-lg text-[#452B1F] max-w-2xl mx-auto mt-4">
+              We use cookies to enhance your experience. You're always in control.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {cookiesInfo.map((cookie, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl p-6 border border-[#D2B48C] hover:border-[#006400] transition-all duration-300 hover:shadow-lg group text-center"
+              >
+                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  🍪
+                </div>
+                <h3 className="text-lg font-black text-[#452B1F] mb-3 group-hover:text-[#006400] transition-colors">
+                  {cookie.type}
+                </h3>
+                <p className="text-[#452B1F] leading-relaxed text-sm mb-2 font-semibold">
+                  {cookie.purpose}
+                </p>
+                <p className="text-[#006400] text-xs">
+                  {cookie.example}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 border border-[#D2B48C] text-center">
+            <p className="text-[#452B1F] mb-4">
+              You can disable cookies anytime through your browser settings, but some features may not work properly.
+            </p>
+            <button className="bg-gradient-to-r from-[#006400] to-[#6B8E23] text-white font-semibold py-2 px-6 rounded-lg hover:from-[#006400] hover:to-[#964B00] transition-all duration-300">
+              Manage Cookie Preferences
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Your Rights Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-[#452B1F] mb-4">
@@ -251,11 +354,11 @@ const PrivacyPolicy = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {yourRights.map((right, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 border border-[#D2B48C] hover:border-[#006400] transition-all duration-300 hover:shadow-lg group text-center"
+                className="bg-gradient-to-br from-[#F5F5DC] to-[#D2B48C] rounded-xl p-6 border border-[#D2B48C] hover:border-[#006400] transition-all duration-300 hover:shadow-lg group text-center"
               >
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                   {right.icon}
@@ -269,11 +372,30 @@ const PrivacyPolicy = () => {
               </div>
             ))}
           </div>
+
+          <div className="bg-gradient-to-r from-[#006400] to-[#6B8E23] rounded-2xl p-8 text-center text-white">
+            <h3 className="text-2xl font-black mb-4">Exercise Your Rights</h3>
+            <p className="mb-6 opacity-90">
+              To exercise any of these rights, contact us with your request. We'll respond within 30 days.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="mailto:hamarapattal@gmail.com" className="flex-1 max-w-xs">
+                <button className="w-full bg-white text-[#006400] font-semibold py-3 px-6 rounded-lg hover:bg-[#F5F5DC] transition-all duration-300">
+                  📧 Email Your Request
+                </button>
+              </a>
+              <a href="tel:+919319071784" className="flex-1 max-w-xs">
+                <button className="w-full bg-transparent text-white font-semibold py-3 px-6 rounded-lg border-2 border-white hover:bg-white hover:text-[#006400] transition-all duration-300">
+                  📞 Call Us Now
+                </button>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Contact & Updates Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-b from-white to-[#F5F5DC]">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Contact Info */}
@@ -286,7 +408,7 @@ const PrivacyPolicy = () => {
               </p>
               
               <div className="space-y-4">
-                <div className="flex items-center gap-4 p-4 bg-[#F5F5DC] rounded-xl border border-[#D2B48C]">
+                <div className="flex items-center gap-4 p-4 bg-white rounded-xl border border-[#D2B48C] hover:border-[#006400] transition-all duration-300">
                   <div className="w-10 h-10 bg-gradient-to-r from-[#006400] to-[#6B8E23] rounded-lg flex items-center justify-center text-white">
                     📧
                   </div>
@@ -296,7 +418,7 @@ const PrivacyPolicy = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 bg-[#F5F5DC] rounded-xl border border-[#D2B48C]">
+                <div className="flex items-center gap-4 p-4 bg-white rounded-xl border border-[#D2B48C] hover:border-[#006400] transition-all duration-300">
                   <div className="w-10 h-10 bg-gradient-to-r from-[#006400] to-[#6B8E23] rounded-lg flex items-center justify-center text-white">
                     📞
                   </div>
@@ -305,11 +427,21 @@ const PrivacyPolicy = () => {
                     <p className="text-[#006400]">+91 93190 71784</p>
                   </div>
                 </div>
+
+                <div className="flex items-center gap-4 p-4 bg-white rounded-xl border border-[#D2B48C] hover:border-[#006400] transition-all duration-300">
+                  <div className="w-10 h-10 bg-gradient-to-r from-[#006400] to-[#6B8E23] rounded-lg flex items-center justify-center text-white">
+                    📍
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#452B1F]">Visit Us</h4>
+                    <p className="text-[#006400]">Noida, Uttar Pradesh, India</p>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Policy Updates */}
-            <div className="bg-gradient-to-br from-[#F5F5DC] to-[#D2B48C] rounded-2xl p-6 border border-[#D2B48C]">
+            <div className="bg-white rounded-2xl p-6 border border-[#D2B48C]">
               <h3 className="text-2xl font-black text-[#452B1F] mb-4">
                 Policy Updates
               </h3>
@@ -317,15 +449,26 @@ const PrivacyPolicy = () => {
                 We may update this privacy policy from time to time to reflect changes in our practices or legal requirements. We'll notify you of any significant changes.
               </p>
               
-              <div className="bg-white/80 rounded-xl p-4 border border-[#D2B48C]">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-[#006400] font-semibold">Current Version</p>
-                    <p className="text-[#452B1F] text-sm">Version 2.1 • January 2025</p>
+              <div className="space-y-4">
+                <div className="bg-gradient-to-r from-[#F5F5DC] to-[#D2B48C] rounded-xl p-4 border border-[#D2B48C]">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className="text-[#006400] font-semibold">Current Version</p>
+                      <p className="text-[#452B1F] text-sm">Last Updated: [Insert Date]</p>
+                    </div>
+                    <div className="w-12 h-12 bg-gradient-to-r from-[#006400] to-[#6B8E23] rounded-full flex items-center justify-center text-white font-bold">
+                      v2.1
+                    </div>
                   </div>
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#006400] to-[#6B8E23] rounded-full flex items-center justify-center text-white font-bold">
-                    v2.1
-                  </div>
+                </div>
+
+                <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+                  <h4 className="font-bold text-[#452B1F] mb-2">Important Notes</h4>
+                  <ul className="text-sm text-[#452B1F] space-y-1">
+                    <li>• Our services are not intended for individuals under 13</li>
+                    <li>• We are not responsible for external website privacy practices</li>
+                    <li>• No online platform is 100% secure - we maintain best practices</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -334,7 +477,7 @@ const PrivacyPolicy = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 bg-gradient-to-b from-white to-[#F5F5DC]">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-[#452B1F] mb-4">
             Trust You Can Taste

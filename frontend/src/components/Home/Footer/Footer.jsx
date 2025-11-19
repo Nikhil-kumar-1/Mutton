@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaFacebookF, FaPinterestP, FaPhone, FaWhatsapp, FaTwitter,FaArrowUp } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaPinterestP, FaPhone, FaWhatsapp, FaTwitter,FaArrowUp, } from "react-icons/fa";
 
 const Footer = () => {
   const quickLinks = [
@@ -20,7 +20,7 @@ const Footer = () => {
   const legalLinks = [
     { name: "Privacy Policy", path: "/privacy-policy" },
     { name: "Terms of Service", path: "/terms" },
-    { name: "Return Policy", path: "/return-policy" },
+    
   ];
 
   const contactInfo = [
