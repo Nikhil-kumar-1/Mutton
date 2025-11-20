@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaFacebookF, FaPinterestP, FaPhone, FaWhatsapp, FaTwitter,FaArrowUp, } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaPinterestP, FaPhone, FaWhatsapp, FaArrowUp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const quickLinks = [
@@ -98,9 +99,9 @@ const Footer = () => {
               {/* Twitter */}
               <a
                 href="https://x.com/HamaraPattal"
-                className="w-10 h-10 bg-[#392F1D] rounded-full flex items-center justify-center hover:bg-[#FF0000] transition-colors duration-300 group"
+                className="w-10 h-10 bg-[#392F1D] rounded-full flex items-center justify-center hover:bg-[#000000] transition-colors duration-300 group"
               >
-                <FaTwitter className="text-lg text-[#F5F5DC] group-hover:text-white transition-colors" />
+                <FaXTwitter className="text-lg text-[#F5F5DC] group-hover:text-white transition-colors" />
               </a>
             </div>
           </div>
